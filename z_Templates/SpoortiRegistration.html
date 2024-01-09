@@ -9,20 +9,13 @@
    
   </head>
   <body>
-    <!-- <nav>
-      <img src="/z_static/media/ApexLogo.png" class="apexlogo" alt="" />
-      <ul id="nav-list">
-        <li class="nav-list-item"><a href="#">Home</a></li>
-        <li class="nav-list-item"><a href="#">Contact Us</a></li>
-        <li class="nav-list-item"><a href="#">Register</a></li>
-        <li class="nav-list-item"><a href="#">Gallery</a></li>
-      </ul>
-      <img src="/z_static/media/CouncilLogo.png" class="councillogo" alt="" />
-    </nav> -->
     <nav>
       <img src="/z_static/media/ApexLogo.png" class="apexlogo" alt="" />
       <ul id="nav-list">
-        <li class="nav-list-item"><img src="/z_static/media/apexFestLogo.png"></li>
+        <li class="nav-list-item"><a href="{% url 'landpage' %}">Home</a></li>
+        <li class="nav-list-item"><a href="#">Contact Us</a></li>
+        <li class="nav-list-item"><a href="{% url 'SpoortiDashboard' %}">Sphoorti Dashboard</a></li>
+        <li class="nav-list-item"><a href="https://drive.google.com/file/d/1TXRhaBmeZ5sEYLmmvzTUHeF7lA7eFFJh/view?usp=sharing">Rule Book</a></li>
       </ul>
       <img src="/z_static/media/CouncilLogo.png" class="councillogo" alt="" />
     </nav>

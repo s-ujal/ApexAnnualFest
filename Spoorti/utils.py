@@ -55,8 +55,8 @@ team_amount = {
 def get_member(game):
     member=[]
     meb=member_count[game]     #for fetching members from utils.py
-    for i in range(1,meb+1):
-        member.append(i)
+    for i in range(1,meb):
+        member.append(i+1)
     return member
 
 def get_amount(game):

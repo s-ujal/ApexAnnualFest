@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spoorti</title>
+    <title>Sphoorti</title>
     <link rel="stylesheet" href="/z_static/CSS/Spoorti.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -18,7 +18,7 @@
         <img src="/z_static/media/ApexLogo.png" class="apexlogo" alt="" />
         <ul id="nav-list">
             <li class="nav-list-item"><a href="{% url 'landpage' %}">Home</a></li>
-            <li class="nav-list-item"><a href="{% url 'SpoortiDashboard' %}">Spoorti Dashboard</a></li>
+            <li class="nav-list-item"><a href="{% url 'SpoortiDashboard' %}">Sphoorti Dashboard</a></li>
             <li class="nav-list-item"><a href="#register">Register</a></li>
             <li class="nav-list-item"><a href="#gallery">Gallery</a></li>
         </ul>
@@ -28,10 +28,11 @@
 
     <div class="spoorti">
         <div class="spoorti-img-box">
-            <img id="spoorti" src="/z_static/media/SpoortiLogoLetter.jpg" alt="" id="spoortiimg">
+            <img id="spoortiimg" src="/z_static/media/SpoortiLogoLetter.jpg" alt="">
         </div>
     </div>
 
+    <hr>
     <!-- aboutus begins  -->
     <div class="aboutus">
         <h3>About Us</h3>
@@ -99,19 +100,6 @@
                     <td>Badminton (Mixed)</td>
                     <td>800</td>
                 </tr>
-
-
-            </tbody>
-        </table>
-        <table>
-            <thead>
-                <tr>
-                    <td>Game</td>
-                    <td>Entry Fee (Rs)</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
                 <tr>
                     <td>Volleyball(Male)</td>
                     <td>2000</td>
@@ -159,7 +147,9 @@
                     <td>Chess</td>
                     <td>200</td>
                 </tr>
+
             </tbody>
+        </table>
         </table>
     </div>
     <!-- princing ends  -->
@@ -169,87 +159,112 @@
         <div class="card basketball">
             <h3>Basketball</h3>
             <div class="btn">
-                <button><a class="dropdown-item" href="{% url 'teamInfo' game='Basketball Female' u_id=request.user.u_id %}" style="text-decoration: none; color: inherit; ">Female</a></button>
-                <button><a class="dropdown-item" href="{% url 'teamInfo' game='Basketball Male' u_id=request.user.u_id %}" style="text-decoration: none; color: inherit; ">Male</a></button>
+                <button><a class="dropdown-item"
+                        href="{% url 'teamInfo' game='Basketball Female' u_id=request.user.u_id %}"
+                        style="text-decoration: none; color: inherit; ">Female</a></button>
+                <button><a class="dropdown-item"
+                        href="{% url 'teamInfo' game='Basketball Male' u_id=request.user.u_id %}"
+                        style="text-decoration: none; color: inherit; ">Male</a></button>
             </div>
         </div>
         <div class="card football">
             <h3>Football</h3>
             <div class="btn">
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Football Female' u_id=request.user.u_id %}" style="text-decoration: none; color: inherit;">Female</a></button>
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Football male' u_id=request.user.u_id %}" style="text-decoration: none; color: inherit;">Male</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='Football Female' u_id=request.user.u_id %}"
+                        style="text-decoration: none; color: inherit;">Female</a></button>
+                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Football male' u_id=request.user.u_id %}"
+                        style="text-decoration: none; color: inherit;">Male</a></button>
             </div>
         </div>
         <div class="card cricket">
             <h3>Cricket</h3>
             <div class="btn">
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Cricket Female' u_id=request.user.u_id %}">Female</a></button>
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Cricket Male' u_id=request.user.u_id %}">Male</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='Cricket Female' u_id=request.user.u_id %}">Female</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='Cricket Male' u_id=request.user.u_id %}">Male</a></button>
             </div>
         </div>
         <div class="card badminton-single">
             <h3>Badminton (Single)</h3>
             <div class="btn">
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Badminton Single Female' u_id=request.user.u_id  %}">Female</a></button>
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Badminton Single Male' u_id=request.user.u_id  %}">Male</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='Badminton Single Female' u_id=request.user.u_id  %}">Female</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='Badminton Single Male' u_id=request.user.u_id  %}">Male</a></button>
             </div>
         </div>
         <div class="card badminton-double">
             <h3>Badminton (Double)</h3>
             <div class="btn">
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Badminton Double Female' u_id=request.user.u_id  %}">Female</a></button>
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Badminton Double Male' u_id=request.user.u_id  %}">Male</a></button>
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Badminton Mixed' u_id=request.user.u_id  %}">Mixed</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='Badminton Double Female' u_id=request.user.u_id  %}">Female</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='Badminton Double Male' u_id=request.user.u_id  %}">Male</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='Badminton Mixed' u_id=request.user.u_id  %}">Mixed</a></button>
             </div>
         </div>
         <div class="card tt-single">
             <h3>Table Tenis (Single)</h3>
             <div class="btn">
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='TT Single Female' u_id=request.user.u_id  %}">Female</a></button>
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='TT Single Male' u_id=request.user.u_id  %}">Male</a></li></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='TT Single Female' u_id=request.user.u_id  %}">Female</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='TT Single Male' u_id=request.user.u_id  %}">Male</a></li></button>
             </div>
         </div>
         <div class="card tt-double">
             <h3>Table Tenis (Double)</h3>
             <div class="btn">
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='TT Double Female' u_id=request.user.u_id  %}">Female</a></button>
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='TT Double Male' u_id=request.user.u_id  %}">Male</a></button>
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='TT Mixed' u_id=request.user.u_id  %}">Mixed</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='TT Double Female' u_id=request.user.u_id  %}">Female</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='TT Double Male' u_id=request.user.u_id  %}">Male</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='TT Mixed' u_id=request.user.u_id  %}">Mixed</a></button>
             </div>
         </div>
         <div class="card tugofwar">
             <h3>Tug of War</h3>
             <div class="btn">
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='TugOfWar Female' u_id=request.user.u_id  %}">Female</a></button>
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='TugOfWar Male' u_id=request.user.u_id  %}">Male</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='TugOfWar Female' u_id=request.user.u_id  %}">Female</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='TugOfWar Male' u_id=request.user.u_id  %}">Male</a></button>
             </div>
         </div>
         <div class="card kabaddi">
             <h3>Kabaddi</h3>
             <div class="btn">
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Kabaddi Female' u_id=request.user.u_id  %}">Female</a></button>
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Kabaddi Male' u_id=request.user.u_id  %}">Kabaddi Male</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='Kabaddi Female' u_id=request.user.u_id  %}">Female</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='Kabaddi Male' u_id=request.user.u_id  %}">Male</a></button>
             </div>
         </div>
         <div class="card chess">
             <h3>Chess</h3>
             <div class="btn">
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Chess' u_id=request.user.u_id  %}">Chess</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='Chess' u_id=request.user.u_id  %}">Mixed</a></button>
             </div>
         </div>
         <div class="card volleyball">
             <h3>Volleyball</h3>
             <div class="btn">
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Volleyball Female' u_id=request.user.u_id  %}">Female</a></button>
-                <button><a class="dropdownitem" href="{% url 'teamInfo' game='Volleyball Male' u_id=request.user.u_id  %}">Male</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='Volleyball Female' u_id=request.user.u_id  %}">Female</a></button>
+                <button><a class="dropdownitem"
+                        href="{% url 'teamInfo' game='Volleyball Male' u_id=request.user.u_id  %}">Male</a></button>
             </div>
         </div>
     </div>
     <!-- register ends  -->
-    <hr>
     <!-- gallery begins  -->
     <div class="gallery">
-        <div class="slide-container"id="gallery">
+        <div class="slide-container" id="gallery">
             <h3>Last year's echo,</h3>
             <h3>Where stories were born</h3>
             <div class="slide">

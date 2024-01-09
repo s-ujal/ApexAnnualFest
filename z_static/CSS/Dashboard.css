@@ -3,9 +3,23 @@
 
 body {
     min-height: 100vh;
-    background-image: url('/z_static/media/RegistrationMainBG.jpg');
+    /* background-image: url('/z_static/media/RegistrationMainBG.jpg'); */
+    background: linear-gradient(45deg, black, #d200a1, #7462ff, #f48e21, #23d5ab);
+    background-size: 500% 500%;
+    animation: color 12s ease-in-out infinite;
 }
-
+@keyframes color {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+/* nav begins  */
 nav {
     display: flex;
     justify-content: space-between;
@@ -59,7 +73,7 @@ nav {
 /* nav ends  */
 /* section begins  */
 section{
-    min-height: 100vh;
+    min-height: 30vh;
     display: flex;
     flex-direction: column;
 }
@@ -108,7 +122,7 @@ table button a{
 }
 
 footer {
-    margin-top: 100px;
+    margin-top: 120px;
     position: relative;
     width: 100%;
     background: #b047ec;
@@ -284,7 +298,7 @@ footer #wave4 {
         align-items: center;
     }
     #nav-list > li > a{
-        font-size: 0.6em;
+        font-size: 0.5em;
         padding: 2px 2px;
     }
     .main{

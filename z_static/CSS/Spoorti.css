@@ -7,10 +7,24 @@
 }
 
 body {
-    font-family: 'Jost', sans-serif;
+    min-height: 100vh;
     /* background-image: url('/z_static/media/RegistrationMainBG.jpg'); */
-    background: url('/z_static/media/RegistrationMainBG.jpg');
+    background: linear-gradient(45deg, black, #d200a1, #7462ff, #f48e21, #23d5ab);
+    background-size: 500% 500%;
+    animation: color 12s ease-in-out infinite;
 }
+@keyframes color {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
 
 
 /* navigation begin */

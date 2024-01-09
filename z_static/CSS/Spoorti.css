@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Rubik+Doodle+Shadow&family=Ubuntu+Condensed&family=Ubuntu:wght@500&family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anek+Gurmukhi&family=Flamenco&family=Gupter&family=Kanit&family=Rubik+Vinyl&display=swap');
 
+*{
+    padding: 0;
+    margin: 0;
+}
 
 body {
     font-family: 'Jost', sans-serif;
-    background-image: url('/z_static/media/RegistrationMainBG.jpg');
+    /* background-image: url('/z_static/media/RegistrationMainBG.jpg'); */
+    background: url('/z_static/media/RegistrationMainBG.jpg');
 }
 
 
@@ -88,7 +93,6 @@ nav {
 .aboutus {
     padding: 5% 10%;
     backdrop-filter: blur(10px);
-    box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.438), inset 5px 5px 5px 0 rgba(255, 255, 255, 0.3);
     margin: 0;
 }
 
@@ -121,22 +125,22 @@ table {
     margin: auto;
     backdrop-filter: blur(10px);
     color: white;
+    width: 95vw;
 }
 
 table>thead>tr>td {
     border: 1px solid white;
-    padding: 10px auto;
     text-align: center;
     font-family: 'Ubuntu', serif;
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 900;
-    padding: 20px;
+    
 }
 
 table>tbody>tr>td {
     border: 1px solid white;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-family: 'Anek Gurmukhi', sans-serif;
 }
 
@@ -429,10 +433,13 @@ footer #wave4 {
         height: 500px;
     }
     #spoortiimg{
-        width: 100%;
+        width: 300px;
     }
     .price{
         flex-direction: column;
+    }
+    .card>h3{
+        font-size: 25px;
     }
     .register{
         grid-template-columns: 1fr;
@@ -442,7 +449,7 @@ footer #wave4 {
         margin-bottom: 30px;
     }
     .gallery > .slide-container > h3{
-        font-size: 10px;
+        font-size: 25px;
     }
 
 

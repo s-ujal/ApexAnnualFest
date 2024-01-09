@@ -34,7 +34,6 @@ def signup_page(request):
             user.set_password(password)
             user.save()
             messages.success(request, 'Account created successfully')
-            send_email_to_client(user.email)
             return redirect('/login')
         except Exception as e:
             # Handle exceptions, log the error, or provide a user-friendly message

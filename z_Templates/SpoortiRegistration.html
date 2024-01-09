@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registration INFO</title>
     <link rel="stylesheet" href="/z_static/CSS/Registration.css" />
-   
+    <script src="/z_static/JavaScript/RegistrationButtonClick.js"></script>
   </head>
   <body>
     <nav>
@@ -24,7 +24,7 @@
       <div class="main">
         <label>Register</label>
         <h4 style="text-align: center;">{{game}}</h4>
-        <form  method="post">
+        <form onsubmit="return disableButton('registrationForm')" method="post">
           {%csrf_token%}
           <!-- <input type="text" name="university_name" placeholder="University Name" required /> -->
           <input type="text" name="TeamName"   id="exampleFormControlInput1" placeholder="Team Name"  required>
@@ -35,7 +35,8 @@
           {% for i in members %}
               <input type="text" name="Member{{ i }}Name" id="exampleFormControlInput{{ i }}Name" placeholder="Player {{ i }}" required>
         {% endfor %}
-          <button  type="submit">Submit</button>
+          <button  type="submit" id="registrationSubmitButton">Submit</button>
+          <span id="registrationLoadingSpinner" style="display: none;">Submitting...</span>
         </form>
       </div>
     </section>
@@ -82,7 +83,17 @@
     </div>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
+    <script>
+    function disableButton(formType) {
+    document.getElementById("registrationSubmitButton").disabled = true;
+    document.getElementById("registrationLoadingSpinner").style.display = 'inline';
+    setTimeout(function () {
+        document.getElementById("registrationSubmitButton").disabled = false;
+        document.getElementById("registrationLoadingSpinner").style.display = 'none';
+    }, 3000);
+    return true;
+}
+    </script>
   </body>
 
 </html>

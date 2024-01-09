@@ -30,7 +30,7 @@
       <div class="main">
         <input type="checkbox" id="chk" aria-hidden="true">
         <div class="signup">
-          <form method="post" action="{% url 'signup_page' %}">
+          <form onsubmit="return disableButton('signup')" method="post" action="{% url 'signup_page' %}">
             {% csrf_token %}
             <label for="chk" aria-hidden="true">Sign up</label>
             <input name="name" type="text" id="name" aria-describedby="nameHelp" placeholder="User Name"  required/>
@@ -38,18 +38,20 @@
             <input name="phoneNO" type="text" id="phoneNo" aria-describedby="phoneNoHelp" pattern="[0-9]{10}" placeholder="Contact Number" required/>
             <input name="college" type="text" id="college" aria-describedby="collegeHelp" placeholder="College Name" required/>
             <input name="password" type="password" class="form-control" id="password" placeholder="User Password" required/>
-            <button>Sign up</button>
+            <button id="signupButton">Sign up</button>
+            <span id="signupLoadingSpinner" style="display: none;">Signing up...</span>
           </form>
         </div>
         <div class="login">
-          <form method="post" action="{% url 'login_page' %}">
+          <form onsubmit="return disableButton('login')" method="post" action="{% url 'login_page' %}">
             {% csrf_token %}
             <label for="chk" aria-hidden="true">Login</label>
             <input type="email" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
             <input type="password" name="password" id="exampleInputPassword1" placeholder="Password" required>
-            <button>Login</button>
+            <button id="loginButton">Login</button>
             <div style="display: flex; justify-content: center; align-items: center; margin: 8px;">Don't have any account <a href="{% url 'signup_page' %}">Signup</a></div>
             <div style="display: flex; justify-content: center; align-items: center; "><a href="{% url "password_reset" %}">Forgotten your password?</a></div>
+            <span id="loginLoadingSpinner" style="display: none;">Logging in...</span>
           </form>
         </div>
       </div>
@@ -97,8 +99,17 @@
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  
-
+  <script>
+    function disableButton(formType) {
+    document.getElementById(formType + "Button").disabled = true;
+    document.getElementById(formType + "LoadingSpinner").style.display = 'inline';
+    setTimeout(function () {
+    document.getElementById(formType + "Button").disabled = false;
+    document.getElementById(formType + "LoadingSpinner").style.display = 'none';
+    }, 3000); // Simulating a 2-second delay, adjust as needed
+    return true; // Allow form submission to continue
+   }
+  </script>
 </body>
 
 </html>

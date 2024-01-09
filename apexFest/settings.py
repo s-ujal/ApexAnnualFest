@@ -139,7 +139,9 @@ STATICFILES_DIRS =[
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MAINTENANCE_MODE = False
-MAINTENANCE_URL='/z_Templates/503.html'                                              ##########################
+MAINTENANCE_URL='/z_Templates/503.html'        
+# if True admin site will not be affected by the maintenance-mode page
+MAINTENANCE_MODE_IGNORE_ADMIN_SITE = True                                     ##########################
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST="smtp.gmail.com"

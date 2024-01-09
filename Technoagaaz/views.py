@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import  JsonResponse
 from  django.contrib.auth.decorators import login_required
+from maintenance_mode.decorators import force_maintenance_mode_on
 from home.utils import send_email_to_client
 from django.http import HttpResponse
 from .forms import ActionForm
@@ -11,6 +12,7 @@ from django.http import Http404
 
 # Create your views here.
 @login_required(login_url="/login")
+@force_maintenance_mode_on
 def Technoagaaz_Page(request, u_id):            #spoorti land page 
     request.session['form_submitted'] = False
     return render(request,'Technoaagaz.html')
@@ -67,6 +69,7 @@ def info(request,game,u_id):            #for submit the team
        
 
 @login_required(login_url="/login")
+@force_maintenance_mode_on
 def dashboard(request):
      
     if request.method == 'POST':

@@ -110,6 +110,7 @@ nav {
     margin: 0;
 }
 
+
 .aboutus>h3 {
     text-align: center;
     font-weight: 900;
@@ -178,7 +179,6 @@ table>tbody>tr>td:nth-child(2) {
     width: 90%;
     margin: 10px auto;
 }
-
 .card>h3 {
     text-align: center;
     font-family: 'Ubuntu';

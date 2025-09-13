@@ -1,2 +1,1 @@
-# ApexFest
-This is my University Annual Fest program website. 
+This repository contains the official Apex Annual Fest (Spoorti & Technoagaz) website project developed using Django for the backend and HTML & CSS for the frontend, with REST API support. The platform includes PayPal payment gateway integration for secure online registrations and ticket payments. Designed with a responsive UI, automated email notifications, and user-friendly navigation, the website streamlines event participation and enhances the digital experience of the fest. 
